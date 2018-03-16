@@ -25,7 +25,7 @@
     
   <header>
     	  
-    <img src="sunnyday1.jpeg" alt="CoatOrNot site logo" width="10%" height="50em" >
+    <img src="sunnyday1.jpeg" alt="CoatOrNot site logo" width="20%" height="70em" >
     <h1>CoatOrNot</h1>
     <div class="subheading">Should I bring a coat... or not?</div>
 	
@@ -40,8 +40,8 @@
 
   <nav class="clearfix">
     <button onclick="toggleMenu()">&#9776;</button>
-	<ul id="primaryNav" class="hide"> 
-	  <li><a class="active" href="https://str17024.github.io/lesson9/">Home</a></li>
+	 <ul id="primaryNav" class="hide"> 
+	    <li><a class="active" href="https://str17024.github.io/lesson9/">Home</a></li>
 	  <li><a href="https://str17024.github.io/franklin/">Franklin</a></li>
 	  <li><a href="https://str17024.github.io/Greenville/">Greenville</a></li>
 	  <li><a href="https://str17024.github.io/springfield/">Springfield</a></li>
@@ -50,28 +50,20 @@
          </ul>
 </nav>		
     
-<!--<div class="topnav">
-  <a class="active" href="#home">Home</a>
-  <a href="#franklin">Franklin</a>
-  <a href="#Greenville">Greenville</a>
-  <a href="#Springfield">Springfield</a>
-  <a href="#Storm Center">Storm Center</a>
-  <a href="#Gallery">Gallery</a>
-</div> -->
     
  <div id="main">		
   
     
   <main>
 	  <p>
-    <h2 text-align="center">The City of Franklin</h2>
+    <h2 text-align="center">The Weather Site</h2>
 	  
 	  
 </br>
 </br>
 </br>
 </br>
-<section class="weathersummary">
+<div class="weathersummary">
     <div class="franklinimage">
       <img src="houses.jpeg" alt="franklinimage" width="100%">
     </div>
@@ -89,100 +81,19 @@
     </aside>
         
       </div>           
-    </section>
-</p>
-	  </br>
-</br>
-</br>
-</br>
-</br>
-</br>
+    
 
 
 
-<p>
-	</br>
- 
-    <script>
-        
-    var Towns= document.querySelector('.towns');
-    var section = document.querySelector('.townssec');
-        
-        
-      
-var requestURL = 'https://mdn.github.io/learning-area/javascript/oojs/json/superheroes.json';
-
-var request = new XMLHttpRequest();
-        request.open('GET', requestURL);
-        request.responseType = 'json';
-        request.send();
-        request.onload = function() {
-  var superHeroes = request.response;
-  populateTowns(superHeroes);
-  showHeroes(superHeroes);
-}
-        
-function populateTowns(jsonObj) {
-  var myH1 = document.createElement('h1');
-  myH1.textContent = jsonObj['squadName'];
-  towns.appendChild(myH1);
-
-  var myPara = document.createElement('p');
-  myPara.textContent = 'Hometown: ' + jsonObj['homeTown'] + ' // Formed: ' + jsonObj['formed'];
-  towns.appendChild(myPara);
-} 
-  function showHeroes(jsonObj) {
-  var heroes = jsonObj['members'];
-      
-  for (var i = 0; i < heroes.length; i++) {
-    var myArticle = document.createElement('article');
-    var myH2 = document.createElement('h2');
-    var myPara1 = document.createElement('p');
-    var myPara2 = document.createElement('p');
-    var myPara3 = document.createElement('p');
-    var myList = document.createElement('ul');
-
-    myH2.textContent = heroes[i].name;
-    myPara1.textContent = 'Secret identity: ' + heroes[i].secretIdentity;
-    myPara2.textContent = 'Age: ' + heroes[i].age;
-    myPara3.textContent = 'Superpowers:';
-        
-    var superPowers = heroes[i].powers;
-    for (var j = 0; j < superPowers.length; j++) {
-      var listItem = document.createElement('li');
-      listItem.textContent = superPowers[j];
-      myList.appendChild(listItem);
-    }
-
-    myArticle.appendChild(myH2);
-    myArticle.appendChild(myPara1);
-    myArticle.appendChild(myPara2);
-    myArticle.appendChild(myPara3);
-    myArticle.appendChild(myList);
-
-    townssec.appendChild(myArticle);
-  }
-}      
-        
 
 
-</script>
-
-<div id="towns">
-
-</div>
 
 
-<section id="townssec">
 
 </section>
 
-      </br>
-</br>
-</br>
-</br>
-</br>
-</br>
+      
+
 
 <div>
 
@@ -192,7 +103,7 @@ function populateTowns(jsonObj) {
 <p>
     
 	    <p>
-      <h3>Franklin Breaks Record!</h3>
+      
 	    </p>
 	    </br>
        </br>
@@ -204,15 +115,17 @@ function populateTowns(jsonObj) {
 
 
         <p>
-        <div class="town-articletext">    
+        <!--<div class="town-articletext">    
         !!Short article content placeholder. But imagine the amazing articles that section will hold!! Like google api fonts.
-        </div>    
+        </div>    -->
         
 
 </p>
-</p>
 
 
+<section class="grid">
+
+</section>
   </main>
     
 </br>
@@ -225,13 +138,56 @@ function populateTowns(jsonObj) {
     <aside>
       Contact information: Ken Strobell
     </aside>
-    <p class="footer-bar" background-color="gray">&copy;2017 All Rights Reserved | CoatOrNot | <span id="currentdate.js">Todays date listed below!</span></p>
+    <p class="footer-bar"> &copy;2018 All Rights Reserved &vert; CoatOrNot &vert;Todays date listed below!<span id="currentdate.js"></span></p>
   </footer>
-</p>
+
+  
+
   <script src="hamburger.js"></script>
   <script src="currentdate.js"></script>
   <script src="windchill.js"></script>
   <script src="windchill2.js"></script>
 
+
+  <script>
+            var section = document.querySelector('section');
+            var requestURL = 'https://byui-cit230.github.io/weather/data/towndata.json';
+            var request = new XMLHttpRequest();
+            request.open('GET', requestURL);
+            request.responseType = 'json';
+            request.send();
+            request.onload = function() {
+                var towns = request.response;
+                showTowns(towns);
+            }
+            function showTowns(jsonObj) {
+                var towns = jsonObj['towns'];
+
+                for (var i = 0; i < towns.length; i++) {
+                    if (i === 2) { continue; }
+                    var myArticle = document.createElement('article');
+                    var myH3 = document.createElement('h3');
+                    var myPara1 = document.createElement('p');
+                    var myPara2 = document.createElement('p');
+                    var myPara3 = document.createElement('p');
+                    var myPara4 = document.createElement('p');
+                   
+                    myH3.textContent = towns[i].name;
+                    myPara1.textContent = 'Motto: ' + towns[i].motto;
+                    myPara2.textContent = 'Year Founded: ' + towns[i].yearFounded;
+                    myPara3.textContent = 'Current Population: ' + towns[i].currentPopulation;
+                    myPara4.textContent = 'Average Rainfall: ' + towns[i].averageRainfall;
+                    
+                    myArticle.appendChild(myH3);
+                    myArticle.appendChild(myPara1);
+                    myArticle.appendChild(myPara2);
+                    myArticle.appendChild(myPara3);
+                    myArticle.appendChild(myPara4);
+                    
+                    section.appendChild(myArticle);
+                } 
+            }
+        
+        </script>
 
 </html>
